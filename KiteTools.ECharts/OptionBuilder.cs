@@ -21,7 +21,6 @@ namespace KiteTools.ECharts
             {
                 series.Add(z);
             }
-            
             var json = new
             {
                 Title = new
@@ -71,10 +70,10 @@ namespace KiteTools.ECharts
                     },
                     new {
                         Type = "value",
-                        // Name = "单位：℃"
+                        // Name = "单位：%"
                         AxisLabel = new
                         {
-                            Formatter = "{value}℃"
+                            Formatter = "{value}%"
                         },
                     }
                     
