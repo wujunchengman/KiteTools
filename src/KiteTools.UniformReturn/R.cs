@@ -7,8 +7,11 @@
     {
         public static Result<T> Ok<T>(T data)
         {
-            var r = new Result<T>();
-            r.Data = data;
+            var r = new Result<T>
+            {
+                Data = data,
+                Success = true,
+            };
             return r;
         }
 
@@ -16,6 +19,36 @@
         {
             var r = new Result<object>();
             r.Success = true;
+            return r;
+        }
+
+        public static Result<object> Error()
+        {
+            var r = new Result<object>
+            {
+                Success = false
+            };
+            return r;
+        }
+
+        public static Result<object> Error(string errorCode)
+        {
+            var r = new Result<object>
+            {
+                Success = false,
+                ErrorCode = errorCode
+            };
+            return r;
+        }
+
+        public static Result<object> Error(string errorCode,string errorMessage)
+        {
+            var r = new Result<object>
+            {
+                Success = false,
+                ErrorCode = errorCode,
+                ErrorMessage = errorMessage
+            };
             return r;
         }
 

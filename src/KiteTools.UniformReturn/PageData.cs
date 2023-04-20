@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KiteTools.UniformReturn
 {
-    internal class PageData
+    public class PageData
     {
     }
 }
