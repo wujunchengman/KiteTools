@@ -41,9 +41,19 @@
             return r;
         }
 
-        public static Result<object> Error(string errorCode,string errorMessage)
+        public static Result<T> Error<T>(string errorCode)
         {
-            var r = new Result<object>
+            var r = new Result<T>
+            {
+                Success = false,
+                ErrorCode = errorCode
+            };
+            return r;
+        }
+
+        public static Result<T> Error<T>(string errorCode,string errorMessage)
+        {
+            var r = new Result<T>
             {
                 Success = false,
                 ErrorCode = errorCode,
